@@ -1,0 +1,39 @@
+<div ng-controller="navController" >
+	<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="#">Pomoc</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li ng-class="{active: selectedIndex == 1}" ng-click="goHome()">
+              <a>Home</a>
+            </li>
+            <li ng-class="{active: selectedIndex == 3}">
+              <a href="#/install">Install</a>
+            </li>
+            <li ng-class="{active: selectedIndex == 2}" ng-show="userId" ng-click="goDashBoard()">
+              <a>Dashboard</a> 
+            </li>
+            <li ng-show="userId">
+              <a href="#">{{userId}}</a>
+            </li>
+            <li ng-show="!userId">
+              <a data-toggle="modal" data-target="#loginModal">Login</a>
+            </li>
+            <!-- <li ng-show="!userId" ><a data-toggle="modal" data-target="#signUpModal"> Sign Up </a></li> -->
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+</div>
+
